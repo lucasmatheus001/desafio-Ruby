@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
         name: 'John',
         cpf: '12345678901',
         email: "lucas@example.com",
-        data_nascimento: '1990-01-01')
+        birthday: '1990-01-01')
       expect(@user).to be_valid
       expect(@user.save).to be_truthy
     end

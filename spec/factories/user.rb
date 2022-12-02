@@ -1,8 +1,10 @@
+require 'faker'
+
 FactoryBot.define do 
   factory :user do
-    cpf {"12345678901"}
-    name {"matheus"}
-    email {"lucas@gamil.com"}
-    birthday {"1998-01-01"}
+    cpf { Faker::Number.number }
+    name {Faker::Name.name}
+    email {Faker::Internet.email}
+    birthday {Faker::Date.birthday(min_age: 18, max_age:70)}
   end
 end

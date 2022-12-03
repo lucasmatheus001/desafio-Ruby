@@ -83,6 +83,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    enum (1.0.0)
     erubi (1.11.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -226,6 +227,7 @@ DEPENDENCIES
   bootsnap
   debug
   devise
+  enum
   factory_bot_rails
   faker
   importmap-rails

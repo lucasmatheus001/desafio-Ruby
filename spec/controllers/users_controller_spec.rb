@@ -16,17 +16,19 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'As a Logged User' do
+    before do
+      @user = create(:user)
+    end
+
     it 'responds a 200 response' do
-      user = create(:user)
-      sign_in user
-      get :show, params: { id: user.id }
+      sign_in @user
+      get :show, params: { id: @user.id }
       expect(subject.status).to eq(200)
     end
 
     it 'render a :show template' do
-      user = create(:user)
-      sign_in user
-      get :show, params: { id: user.id }
+      sign_in @user
+      get :show, params: { id: @user.id }
       expect(response).to render_template(:show)
     end
   end

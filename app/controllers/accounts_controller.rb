@@ -43,7 +43,7 @@ class AccountsController < ApplicationController
   private
 
   def set_account
-    @account = account.find(params[:id])
+    @account = Account.find(params[:id])
   end
 
   def account_params

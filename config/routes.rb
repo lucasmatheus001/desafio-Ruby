@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   
   resources :accounts do
     collection do
-      get '/deposito', action: 'deposito'
-      post '/create_deposito', action: 'create_deposito'
+      get '/deposit', action: 'deposit'
+      post '/create_deposit', action: 'create_deposit'
       get '/transfer', action: 'transfer'
       post '/create_transfer', action: 'create_transfer'
       get '/withdraw', action: 'withdraw'

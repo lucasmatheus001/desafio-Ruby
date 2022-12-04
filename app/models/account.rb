@@ -1,5 +1,7 @@
 class Account < ApplicationRecord
   belongs_to :user
+  has_many :operations_origin,class_name: 'Operation', foreign_key: :origin_id
+  has_many :operations_destiny,class_name: 'Operation', foreign_key: :destiny_id
 
   enum status: { inactive: 0, active: 1}
 
@@ -28,6 +30,7 @@ class Account < ApplicationRecord
     if value > 0
       self.balance += value
       save
+      Operation.create(kind: :deposit, value: value, destiny_id: self.id)
     else
       raise "Valor inválido"
     end
@@ -37,6 +40,7 @@ class Account < ApplicationRecord
     if self.balance >= value && self.id != account.id
       update(balance: self.balance -= value)
       account.update(balance: account.balance += value)
+      Operation.create(kind: :transfer, value: value, origin_id: self.id, destiny_id: account.id)
     else
       raise "Saldo insuficiente"
     end
@@ -46,6 +50,7 @@ class Account < ApplicationRecord
     if self.balance >= value
       self.balance -= value
       save
+      Operation.create(kind: :withdraw, value: value, origin_id: self.id)
     else
       raise "Saldo insuficiente"
     end

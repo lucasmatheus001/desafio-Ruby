@@ -7,6 +7,7 @@ class AccountsController < ApplicationController
 
   def show
     @account = Account.find(params[:id])
+    @operations = Operation.where("origin_id = ? OR destiny_id = ?", @account.id, @account.id)
   end
 
   def new
@@ -40,11 +41,11 @@ class AccountsController < ApplicationController
     #   redirect_to accounts_path
   end
 
-  def deposito
+  def deposit
     
   end
 
-  def create_deposito
+  def create_deposit
     @account = Account.find(params[:id])
     @account.deposit(params[:value].to_d)
     redirect_to dashboard_index_path
@@ -72,6 +73,8 @@ class AccountsController < ApplicationController
     @account.withdraw(params[:value].to_d)
     redirect_to dashboard_index_path
   end
+
+
 
   private
 

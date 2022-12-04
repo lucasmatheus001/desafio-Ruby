@@ -27,12 +27,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_161033) do
 
   create_table "operations", force: :cascade do |t|
     t.integer "kind"
-    t.bigint "origin_id_id"
-    t.bigint "destiny_id_id"
+    t.float "value", null: false
+    t.bigint "origin_id"
+    t.bigint "destiny_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["destiny_id_id"], name: "index_operations_on_destiny_id_id"
-    t.index ["origin_id_id"], name: "index_operations_on_origin_id_id"
+    t.index ["destiny_id"], name: "index_operations_on_destiny_id"
+    t.index ["origin_id"], name: "index_operations_on_origin_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_161033) do
   end
 
   add_foreign_key "accounts", "users"
-  add_foreign_key "operations", "accounts", column: "destiny_id_id"
-  add_foreign_key "operations", "accounts", column: "origin_id_id"
+  add_foreign_key "operations", "accounts", column: "destiny_id"
+  add_foreign_key "operations", "accounts", column: "origin_id"
 end

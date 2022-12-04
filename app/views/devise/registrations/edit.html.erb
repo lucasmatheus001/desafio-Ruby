@@ -2,10 +2,14 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="mb-3 col-lg-12 col-md-12">
+    <%= f.label :CPF, class: "form-label" %>
+    <%= f.text_field :cpf, autofocus: true, autocomplete: "name", class: "form-control-input ", id: "cpf",placeholder: "CPF" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control-input " %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,7 +18,7 @@
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control-input " %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -23,7 +27,12 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control-input "%>
+  </div>
+
+  <div class="mb-3 col-lg-12 col-md-12">
+    <%= f.label :Birtday, class: "form-label" %>
+    <%= f.date_field :birthday, autofocus: true, autocomplete: "birthday", class: "form-control-input ", id: "birhday",placeholder: "Birthday" %>
   </div>
 
   <div class="field">

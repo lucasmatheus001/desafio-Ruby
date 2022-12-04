@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import 'bootstrap'
 import * as bootstrap from "bootstrap"
+import "@fortawesome/fontawesome-free/css/all"
 import "./main"
 import $ from 'jquery';
 global.$ = $;

@@ -74,6 +74,7 @@ group :development do
   # gem "spring"
 
   gem 'enum'
+  gem "font-awesome-sass", "~> 6.2.1"
 end
 
 

@@ -1,0 +1,7 @@
+<%= form_tag create_withdraw_accounts_path do %>
+  <%= label_tag(:id, "Digite sua conta:") %>
+  <%= select_tag(:id, options_for_select(current_user.accounts.collect{|a| [a.number, a.id] })) %>
+  <%= label_tag(:value, "digite o valor: ") %>
+  <%= number_field_tag(:value)%>
+  <%= submit_tag("Let's go!") %>
+<% end %>

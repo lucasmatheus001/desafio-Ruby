@@ -40,6 +40,39 @@ class AccountsController < ApplicationController
     #   redirect_to accounts_path
   end
 
+  def deposito
+    
+  end
+
+  def create_deposito
+    @account = Account.find(params[:id])
+    @account.deposit(params[:value].to_d)
+    redirect_to dashboard_index_path
+  end
+
+  def transfer
+  end
+
+  def create_transfer
+    @account = Account.find(params[:id])
+    destiny_account = Account.find_by(number: params[:number])
+    if destiny_account.present?
+      @account.transfer(params[:value].to_d, destiny_account)
+      redirect_to dashboard_index_path
+    else
+      render :transfer
+    end
+  end
+
+  def withdraw
+  end
+
+  def create_withdraw
+    @account = Account.find(params[:id])
+    @account.withdraw(params[:value].to_d)
+    redirect_to dashboard_index_path
+  end
+
   private
 
   def set_account

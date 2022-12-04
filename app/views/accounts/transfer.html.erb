@@ -1,0 +1,10 @@
+
+<%= form_tag create_transfer_accounts_path do %>
+  <%= label_tag(:id, "Digite sua conta de origem:") %>
+  <%= select_tag(:id, options_for_select(current_user.accounts.collect{|a| [a.number, a.id] })) %>
+  <%= label_tag(:value, "digite o valor: ") %>
+  <%= number_field_tag(:value)%>
+  <%= label_tag(:number, "Digite sua conta de destino:") %>
+  <%= text_field_tag(:number)%>
+  <%= submit_tag("Let's go!") %>
+<% end %>

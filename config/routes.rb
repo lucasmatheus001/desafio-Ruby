@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       post '/create_deposito', action: 'create_deposito'
       get '/transfer', action: 'transfer'
       post '/create_transfer', action: 'create_transfer'
+      get '/withdraw', action: 'withdraw'
+      post '/create_withdraw', action: 'create_withdraw'
     end
   end
   

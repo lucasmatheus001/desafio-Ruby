@@ -42,9 +42,17 @@ class Account < ApplicationRecord
     end
   end
 
+  def withdraw(value)
+    if self.balance >= value
+      self.balance -= value
+      save
+    else
+      raise "Saldo insuficiente"
+    end
+  end
+
   def statement_by_period(initial_date, final_date)
     Statement.where(account_id: self.id, date: initial_date..final_date)
   end
-  
   
 end

@@ -64,6 +64,15 @@ class AccountsController < ApplicationController
     end
   end
 
+  def withdraw
+  end
+
+  def create_withdraw
+    @account = Account.find(params[:id])
+    @account.withdraw(params[:value].to_d)
+    redirect_to dashboard_index_path
+  end
+
   private
 
   def set_account

@@ -1,0 +1,39 @@
+<%= form_tag create_transfer_accounts_path do %>
+  <div id="root">
+    <div class="App background">
+      <div id="db-wrapper">
+        <div class="d-flex flex-column container">
+          <div class="align-items-center justify-content-center g-0 min-vh-100 row">
+            <div class="py-8 py-xl-0 col-lg-5 col-md-5">
+              <div class="card">
+                <div class="p-6 card-body">
+                  <form class="">
+                    <div class="row">
+                      <div class="mb-3 col-lg-12 col-md-12">
+                        <%= label_tag(:id, "Escolha sua conta:", class: "form-label") %>
+                        <%= select_tag(:id, options_for_select(current_user.accounts.collect{|a| [a.number, a.id] }),class: "form-control-input ") %>
+                      </div>
+                      <div class="mb-3 col-lg-12 col-md-12">
+                        <%= label_tag(:value, "Digite o valor:", class: "form-label") %>
+                        <%= number_field_tag(:value,"", class: "form-control-input") %>
+                      </div>
+
+                      <div class="mb-3 col-lg-12 col-md-12">
+                        <%= label_tag(:number, "Digite a Conta De Destino:", class: "form-label") %>
+                        <%= number_field_tag(:number,"", class: "form-control-input") %>
+                      </div>
+                      
+                      <div class="mb-0 d-grid gap-2 col-lg-12 col-md-12">
+                        <%= submit_tag("Realizar Operação", class: "btn btn-primary") %>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

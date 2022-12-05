@@ -1,7 +1,23 @@
-<%= form_tag create_withdraw_accounts_path do %>
-  <%= label_tag(:id, "Digite sua conta:") %>
-  <%= select_tag(:id, options_for_select(current_user.accounts.collect{|a| [a.number, a.id] })) %>
-  <%= label_tag(:value, "digite o valor: ") %>
-  <%= number_field_tag(:value)%>
-  <%= submit_tag("Let's go!") %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div class="container-xxl bg-white p-0">
+    <%# Hero End %>
+    <div class="container-xxl bg-primary hero-header">
+      <%= render 'form_withdraw', accounts: current_user.accounts %> 
+    </div>
+    <%# end hero %>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+

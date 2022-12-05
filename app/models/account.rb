@@ -42,7 +42,7 @@ class Account < ApplicationRecord
       account.update(balance: account.balance += value)
       Operation.create(kind: :transfer, value: value, origin_id: self.id, destiny_id: account.id)
     else
-      raise "Saldo insuficiente"
+      raise "Saldo insuficiente ou conta igual a de destino"
     end
   end
 

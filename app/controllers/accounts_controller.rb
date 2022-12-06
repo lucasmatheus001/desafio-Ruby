@@ -8,6 +8,7 @@ class AccountsController < ApplicationController
   end
 
   def show
+    authorize @account
     @account = Account.find(params[:id])
     @operations = []
     @operations = Operation.where(created_at: Time.parse(params[:start_date])..Time.parse(params[:end_date]))
@@ -84,6 +85,7 @@ class AccountsController < ApplicationController
 
   def set_account
     @account = Account.find(params[:id])
+    authorize @account
   end
 
   def account_params

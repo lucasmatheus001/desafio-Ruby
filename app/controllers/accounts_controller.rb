@@ -1,13 +1,18 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: %i[ show edit update destroy ]
+  before_action :can_search, only: %i(show)
+
 
   def index
     @accounts = Account.all
   end
 
   def show
+    authorize @account
     @account = Account.find(params[:id])
-    @operations = Operation.where("origin_id = ? OR destiny_id = ?", @account.id, @account.id)
+    @operations = []
+    @operations = Operation.where(created_at: Time.parse(params[:start_date])..Time.parse(params[:end_date]))
+                           .where("origin_id = ? OR destiny_id = ?", @account.id, @account.id) if @can_search
   end
 
   def new
@@ -80,9 +85,19 @@ class AccountsController < ApplicationController
 
   def set_account
     @account = Account.find(params[:id])
+    authorize @account
   end
 
   def account_params
     params.require(:account).permit(:saldo, :number, :agency, :status,:user_id)
+  end
+
+  def can_search
+    @can_search = false
+    return unless (params[:start_date].present? && params[:end_date].present?)
+    @can_search = (Time.parse(params[:start_date]) rescue nil).present? && (Time.parse(params[:end_date]) rescue nil).present?
+    if @can_search
+      @can_search = Time.parse(params[:start_date]) < Time.parse(params[:end_date])
+    end
   end
 end

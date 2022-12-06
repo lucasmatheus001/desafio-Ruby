@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div class="container-xxl bg-white p-0">
+    <div class="container-xxl bg-primary hero-header">
+      <%# <%= render 'form_transfer', accounts: current_user.accounts %>
+    </div>
+
+    <%= form_tag @account, method: :get do %>
+      <%= date_field_tag 'start_date', params[:start_date], placeholder: "Enter Start Date" %>
+      <%= date_field_tag 'end_date', params[:end_date], placeholder: "Enter End Date" %>
+      <%= submit_tag 'Search' %>
+    <% end %>
+
+    <% if @operations.present? %>
+      <div class="card">
+        <h5 class="card-header">Extract</h5>
+        <div class="table-responsive text-nowrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Operation</th>
+                <th>Value</th>
+                <th>User_origin</th>
+                <th>User_destiny</th>
+                <th>Date_operation</th>
+              </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+            <% @operations.each do |operation| %>
+              <tr>
+                <td><strong><i class="fa-regular fa-dollar-sign"></i> <%= operation.kind%></strong></td>
+                <td><%= operation.value %></td>
+                <td><%= operation.try(:origin).try(:number)%></td>
+                <td><%= operation.try(:destiny).try(:number) %></td>
+                <td><%= log_date(operation.created_at) %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% else %>
+      <p>No operations found</p>
+    <% end %>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+

@@ -41,9 +41,8 @@ class AccountsController < ApplicationController
   end
 
   def destroy 
-    # #   @account.destroy
-    #     @account.update(status: "excluido")
-    #   redirect_to accounts_path
+    @account.update(status: ":inactive")
+    redirect_to accounts_path
   end
 
   def deposit

@@ -72,7 +72,7 @@ Serão cadastrados alguns Usuários e contas de banco para exemplificação . Cr
 ## Executando o projeto
 Depois de instalar o projeto, execute os seguintes comandos:
 
-    cd my_animes
+    cd desafio-Ruby
     rails s ou bin/dev
 
 Abra seu navegador e acesse http://localhost:3000/
@@ -80,6 +80,8 @@ Abra seu navegador e acesse http://localhost:3000/
 A seguinte página será exibida:
 
 ![Tela de Login da aplicação](https://imgur.com/DFE7pxx.png)
+
+![Tela de Login da aplicação](https://imgur.com/g3BqxZl.gif)
 
 Acesse o sistema com um dos usuários abaixo ou se preferir acesse a opção cadastrar e faça o cadastro de um novo usuário .
  - E-mail: jhonnydepp@gmail.com | senha: 123456

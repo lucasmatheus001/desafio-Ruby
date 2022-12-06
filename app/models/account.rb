@@ -38,7 +38,14 @@ class Account < ApplicationRecord
 
   def transfer(value, account)
     if self.balance >= value && self.id != account.id
-      update(balance: self.balance -= value)
+      total_value = 0
+      if ([0,6].exclude?(Time.current.wday) && (Time.now.hour >= 9 && Time.now.hour < 18))
+        total_value = value + 5
+      else
+        total_value = value + 7
+      end
+      total_value += 10 if value > 1000
+      update(balance: self.balance -= total_value)
       account.update(balance: account.balance += value)
       Operation.create(kind: :transfer, value: value, origin_id: self.id, destiny_id: account.id)
     else

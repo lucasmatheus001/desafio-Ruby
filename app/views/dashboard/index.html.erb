@@ -32,90 +32,64 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                      <div class="service-item rounded h-100">
-                        <%= link_to((pages_home_path),class:"trash-button-header") do %>
-                          <div class="p-5 center-box">
-                            <div class="container">
-                              <i class="fa-regular fa-6x fa-dollar-sign"></i>
-                            </div>
-                            <h5 class="mb-3">Business Research</h5>
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to((pages_home_path),class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"><i class="fa-sharp fa-5x fa-solid fa-house"></i></h5>
+                            <h4 class="mb-3 text-center">Home</h4>
                           </div>
                         <% end %>
                       </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded h-100">
-                          <%= link_to((deposit_accounts_path),class:"trash-button-header") do %>
-                            <div class="p-5">
-                              <h5 class="mb-3">Stretagic Planning</h5>
-                              <span>processo no qual os líderes de uma organização definem sua visão para o futuro e identificam as metas e objetivos de sua organização.</span>
-                            </div>
-                          <% end %>withdraw_accounts_path
-                        </div>                        
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fa fa-chart-line fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3">Market Analysis</h5>
-                                <span>Uma análise de mercado é uma avaliação completa de um mercado dentro de uma indústria específica.</span>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to((deposit_accounts_path),class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"> <i class="fa-regular fa-5x fa-dollar-sign"></i></h5>
+                            <h4 class="mb-3 text-center">Depósitos</h4>
+                          </div>
+                        <% end %>
+                      </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fa fa-chart-area fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3">Financial Analaysis</h5>
-                                <span>Processo de avaliação de negócios, projetos, orçamentos e outras transações relacionadas a finanças para determinar seu desempenho e adequação.</span>
-                            </div>
-                        </div>
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to((transfer_accounts_path),class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"><i class="fa-solid fa-5x fa-money-bill-transfer"></i></h5>
+                            <h4 class="mb-3 text-center">Transferências</h4>
+                          </div>
+                        <% end %>
+                      </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fa fa-balance-scale fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3">legal Advisory</h5>
-                                <span>Resolução de questões legais sem perder muito tempo com questões financeiras ou burocraticas de terceiros.</span>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to((withdraw_accounts_path),class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"><i class="fa-solid fa-5x fa-sack-dollar"></i></h5>
+                            <h4 class="mb-3 text-center">Saques</h4>
+                          </div>
+                        <% end %>
+                      </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fa fa-house-damage fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3">Tax & Insurance</h5>
-                                <span>As autoridades podem ter um julgamento diferente sobre como as mesmas regras se aplicam às mesmas operações comerciais e contestar uma posição fiscal assumida por uma empresa.</span>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to((@account),class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"><i class="fa-solid fa-5x fa-book"></i></h5>
+                            <h4 class="mb-3 text-center">Extratos</h4>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="service-item rounded h-100 box-field">
+                        <%= link_to((edit_user_registration_path),class:"trash-button-header icons-dashboard link-box") do %>
+                          <div class="p-5">
+                            <h5 class="mb-3 text-center"><i class="fa-solid fa-5x fa-user"></i></h5>
+                            <h4 class="mb-3 text-center">Gerenciar Perfil</h4>
+                          </div>
+                        <% end %>
+                      </div>
                     </div>
                 </div>
             </div>

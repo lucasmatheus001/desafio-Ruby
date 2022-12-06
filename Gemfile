@@ -77,6 +77,7 @@ group :development do
   gem "font-awesome-sass", "~> 6.2.1"
 end
 
+gem "pundit"
 
 gem "cssbundling-rails", "~> 1.1"
 

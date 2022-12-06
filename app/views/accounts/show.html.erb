@@ -3,14 +3,8 @@
 <body>
   <div class="container-xxl bg-white p-0">
     <div class="container-xxl bg-primary hero-header">
-      <%# <%= render 'form_transfer', accounts: current_user.accounts %>
+      <%= render 'form_date', accounts: current_user.accounts %> 
     </div>
-
-    <%= form_tag @account, method: :get do %>
-      <%= date_field_tag 'start_date', params[:start_date], placeholder: "Enter Start Date" %>
-      <%= date_field_tag 'end_date', params[:end_date], placeholder: "Enter End Date" %>
-      <%= submit_tag 'Search' %>
-    <% end %>
 
     <% if @operations.present? %>
       <div class="card">
